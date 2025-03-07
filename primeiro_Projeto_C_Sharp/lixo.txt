@@ -1,0 +1,3 @@
+﻿ Utilidades utilidades = new Utilidades();
+            int x = utilidades.dobreo
+            Console.WriteLine($"O dobro de 4 = {x} ");
