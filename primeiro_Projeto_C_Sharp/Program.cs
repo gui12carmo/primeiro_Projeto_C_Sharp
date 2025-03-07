@@ -21,21 +21,21 @@ namespace primeiro_Projeto_C_Sharp
                 {
                     switch (opcao)//Valida a opção
                     {
-                        case 1:
+                        case 1://faz o dobro
                             Console.WriteLine("Execicío 1: Dobro");
                             Console.Write("Escolha um número: ");
                             num = int.Parse(Console.ReadLine());
                             Console.WriteLine($"O dobro de {num} = {Utilidades.dobro(num)}");
                             break;
 
-                        case 2:
+                        case 2://faz a máquina de selos
                             Console.WriteLine("Execicío 2: Selos");
                             Console.Write("Escolha um número: ");
                             num = int.Parse(Console.ReadLine());
                             Console.WriteLine($"{Utilidades.selos(num)}");
-
                             break;
-                        case 3:
+
+                        case 3://faz a paridade
                             Console.WriteLine("Execicío 3: Paridade");
                             Console.Write("Escolha um número: ");
                             num = int.Parse(Console.ReadLine());
