@@ -68,6 +68,18 @@ namespace primeiro_Projeto_C_Sharp
             }
             return $"Com {EUROS} euros você vai receber: {s5} selos de 5 e {s3} selos de 3";
         }
+        // Paridade
+        static internal string paridade(int c)
+        {
+            if (c % 2 == 0)
+            {
+                return "Par";
+            }
+            else
+            {
+                return "Impar";
+            }
+        }
 
     }
 }
