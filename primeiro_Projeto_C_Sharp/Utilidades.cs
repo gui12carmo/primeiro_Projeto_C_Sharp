@@ -11,6 +11,30 @@ namespace primeiro_Projeto_C_Sharp
 
     class Utilidades
     {
+
+        public static (float, float, int) ficha21mar(int[] array, Predicate<int> predi) {
+
+
+            var filtrados = array.Where(i => predi(i)).ToArray();
+
+            if (filtrados.Length == 0)
+                return (0f, 0f, 0);
+
+            int soma = filtrados.Sum();
+            float media = (float)soma / filtrados.Length;
+
+            float somaQuadrados = filtrados
+                .Select(num => (num - media) * (num - media))
+                .Sum();
+            float variancia = somaQuadrados / filtrados.Length;
+            float desvioPadrao = (float)Math.Sqrt(variancia);
+
+            return (media, desvioPadrao, soma);
+
+        }
+
+        
+        
         // Menu
         static internal int menu()
         {
@@ -78,6 +102,39 @@ namespace primeiro_Projeto_C_Sharp
             else
             {
                 return "Impar";
+            }
+        }
+
+        static internal void troca(ref int a, ref int b)
+        {
+            int aux = a;
+            a = b;
+            b = aux;
+        }
+        static internal void estatistical(
+            out float media,
+            out int min,
+            out int max,
+            ref int negas,
+            in int bonus,
+            int[] notas)
+        {
+            negas = 0;
+            min = max = notas[0];
+            media = (float)min;
+            for (int i = 1; i<notas.Length; i++)
+            {
+                media += (float)notas[i];
+                if (max > notas[i]) min = notas[i];
+                if (min < notas[i]) max = notas[i];
+                if (notas[i] < 10) negas++;
+
+
+            }
+            media /= notas.Length;
+            if (bonus > 0) media += bonus;
+            {
+                
             }
         }
 
